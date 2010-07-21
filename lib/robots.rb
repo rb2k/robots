@@ -104,7 +104,7 @@ class Robots
         io = URI.join(uri.to_s, "/robots.txt").open("User-Agent" => user_agent) rescue nil
       end 
     rescue Timeout::Error
-      STDERR.puts "robots.txt request timed out"
+      STDERR.puts "robots.txt request for #{uri} timed out"
     end
   end
   
