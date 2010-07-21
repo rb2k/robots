@@ -25,9 +25,8 @@ class Robots
       agent = /.*/
       io.each do |line|
         next if line =~ /^\s*(#.*|$)/
-        line.downcase!
         arr = line.split(":")
-        key = arr.shift
+        key = arr.shift.to_s.downcase
         value = arr.join(":").strip
         value.strip!
         case key
